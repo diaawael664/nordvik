@@ -7,13 +7,13 @@
  *   begin_checkout · purchase · search · sign_up · generate_lead
  *
  * Each event is pushed to `window.dataLayer` (read by Google Tag Manager, GA4,
- * Meta Pixel via GTM, etc.) and also dispatched as a `nordhaus:track` DOM event
+ * Meta Pixel via GTM, etc.) and also dispatched as a `nordvik:track` DOM event
  * for any other tool. Nothing is sent until the visitor accepts analytics
  * cookies, unless `site.analytics.requireConsent` is false.
  *
  * To connect GA4: paste your GTM container snippet into src/app/layout.tsx,
  * or listen for the DOM event:
- *   window.addEventListener("nordhaus:track", (e) => console.log(e.detail));
+ *   window.addEventListener("nordvik:track", (e) => console.log(e.detail));
  */
 import { site } from "@data/site";
 import { consentStore } from "./consent";
@@ -58,6 +58,6 @@ export function track(event: string, payload: TrackPayload = {}) {
   window.dataLayer = window.dataLayer ?? [];
   window.dataLayer.push({ ecommerce: null }); // GA4 recommends clearing the previous ecommerce object
   window.dataLayer.push({ event, ecommerce });
-  window.dispatchEvent(new CustomEvent("nordhaus:track", { detail: { event, ecommerce } }));
+  window.dispatchEvent(new CustomEvent("nordvik:track", { detail: { event, ecommerce } }));
   if (site.analytics.debug) console.info("[track]", event, ecommerce);
 }

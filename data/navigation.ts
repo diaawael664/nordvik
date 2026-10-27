@@ -115,7 +115,7 @@ export const footerNav: { title: string; links: NavLink[] }[] = [
     ],
   },
   {
-    title: "Nordhaus",
+    title: "Nordvik",
     links: [
       { label: "Our story", href: "/about/" },
       { label: "Journal", href: "/blog/" },

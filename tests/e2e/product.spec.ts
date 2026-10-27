@@ -54,7 +54,7 @@ test("a complete-the-look set gets its discount in the cart", async ({ page }) =
 
 test("gallery layout: stacked shows every image", async ({ page }) => {
   await page.addInitScript(() =>
-    localStorage.setItem("nordhaus:demo-layout", JSON.stringify({ productGallery: "stacked" })),
+    localStorage.setItem("nordvik:demo-layout", JSON.stringify({ productGallery: "stacked" })),
   );
   await page.goto("/product/fjell-three-seat-sofa/");
   await expect(page.getByRole("button", { name: /full screen/ }).filter({ visible: true })).toHaveCount(3);
@@ -63,7 +63,7 @@ test("gallery layout: stacked shows every image", async ({ page }) => {
 test("recently viewed remembers products", async ({ page }) => {
   await page.goto("/product/halo-pendant/");
   // The visit is recorded once the page is interactive.
-  await expect.poll(() => page.evaluate(() => localStorage.getItem("nordhaus:recent") ?? "")).toContain("p15");
+  await expect.poll(() => page.evaluate(() => localStorage.getItem("nordvik:recent") ?? "")).toContain("p15");
   await page.goto("/product/ask-stool/");
   await expect(page.getByRole("region", { name: "Recently viewed" })).toContainText("Halo Pendant");
 });

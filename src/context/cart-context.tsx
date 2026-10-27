@@ -22,8 +22,8 @@ export type CartLineView = CartLine & { product: Product; unitPrice: number; lin
 
 export type PromoCode = (typeof site.promoCodes)[number];
 
-const store = createPersistentStore<CartLine[]>("nordhaus:cart", []);
-const promoStore = createPersistentStore<string | null>("nordhaus:promo", null);
+const store = createPersistentStore<CartLine[]>("nordvik:cart", []);
+const promoStore = createPersistentStore<string | null>("nordvik:promo", null);
 
 const lineKey = (productId: string, color?: string, options?: Record<string, string>) =>
   [productId, color ?? "", ...Object.entries(options ?? {}).map(([k, v]) => `${k}=${v}`)].join("|");

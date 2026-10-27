@@ -1,4 +1,4 @@
-# Nordhaus — Furniture & Home Decor Store Template
+# Nordvik — Furniture & Home Decor Store Template
 
 A premium Next.js template for furniture, lighting and home decor stores.
 Scandinavian-minimal design, three home layouts, a complete shop, and a

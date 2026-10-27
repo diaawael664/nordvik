@@ -9,7 +9,7 @@ import { createPersistentStore } from "@/lib/persistent-store";
 import { clearErrorOnChange, focusFirstError, formValues, required, validate } from "@/lib/validate";
 import { AccountShell } from "../account-shell";
 
-const store = createPersistentStore<Address[]>("nordhaus:addresses", sampleAddresses);
+const store = createPersistentStore<Address[]>("nordvik:addresses", sampleAddresses);
 
 /** Saved addresses (demo: kept in the browser). */
 export function AddressesView() {

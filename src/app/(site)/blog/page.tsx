@@ -3,7 +3,7 @@ import { BlogIndex } from "@/components/blog/blog-index";
 
 export const metadata: Metadata = {
   title: "Journal",
-  description: "Care guides, buying advice and stories from the Nordhaus workshop.",
+  description: "Care guides, buying advice and stories from the Nordvik workshop.",
   alternates: { canonical: "/blog/" },
 };
 

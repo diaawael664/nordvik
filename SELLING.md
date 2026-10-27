@@ -1,4 +1,4 @@
-# Selling Nordhaus — seller notes
+# Selling Nordvik — seller notes
 
 This file and the three commands below are for you, the seller. `npm run package`
 leaves all of them out of the buyer download.
@@ -58,7 +58,7 @@ sizes in `scripts/marketplace.mjs` if they've changed.
 npm run package
 ```
 
-Creates `dist/nordhaus-v<version>.zip` (about 0.4 MB) from a clean copy:
+Creates `dist/nordvik-v<version>.zip` (about 0.4 MB) from a clean copy:
 
 - no `node_modules`, build output, local settings or test results
 - no demo photos, video, page previews, `/demos/` page or these seller tools

@@ -10,7 +10,7 @@ import { PRESET_KEY } from "./preset-boot";
  * During the static render and hydration this always returns the configured
  * values, so the HTML never mismatches.
  */
-const overrides = createPersistentStore<Partial<LayoutSettings>>("nordhaus:demo-layout", {});
+const overrides = createPersistentStore<Partial<LayoutSettings>>("nordvik:demo-layout", {});
 
 export function useLayoutSettings(): LayoutSettings {
   const o = useSyncExternalStore(overrides.subscribe, overrides.getSnapshot, overrides.getServerSnapshot);

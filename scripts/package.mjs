@@ -3,7 +3,7 @@
  *
  *   npm run package
  *
- * Creates dist/nordhaus-v<version>.zip from a clean copy of the project:
+ * Creates dist/nordvik-v<version>.zip from a clean copy of the project:
  *   • leaves out build output, dependencies, local settings and test results
  *   • leaves out live-demo-only material: mirrored Unsplash photos, page
  *     previews and the /demos/ landing page (with its menu link)
@@ -20,10 +20,10 @@ import { deflateRawSync } from "node:zlib";
 
 const root = process.cwd();
 const { version } = JSON.parse(readFileSync(join(root, "package.json"), "utf8"));
-const name = `nordhaus-v${version}`;
+const name = `nordvik-v${version}`;
 const dist = join(root, "dist");
 // Staged outside the project, because a folder can't be copied into itself.
-const stageRoot = join(tmpdir(), `nordhaus-package-${Date.now()}`);
+const stageRoot = join(tmpdir(), `nordvik-package-${Date.now()}`);
 const stage = join(stageRoot, name);
 
 /* ── 1. Clean copy ──────────────────────────────────────────────────────── */

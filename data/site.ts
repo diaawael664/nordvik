@@ -8,13 +8,13 @@ import type { ImageKey } from "./images";
 export type ImageMode = "unsplash" | "mirror" | "placeholder";
 
 export const site = {
-  name: "Nordhaus",
-  /** Shown after the store name in browser tabs: "Shop — Nordhaus". */
+  name: "Nordvik",
+  /** Shown after the store name in browser tabs: "Shop — Nordvik". */
   tagline: "Furniture made to be lived with",
   description:
-    "Nordhaus makes solid-wood furniture, lighting and objects for calm, considered homes. Designed in Copenhagen, built to last decades.",
+    "Nordvik makes solid-wood furniture, lighting and objects for calm, considered homes. Designed in Copenhagen, built to last decades.",
   /** Used for canonical URLs, Open Graph and the sitemap. No trailing slash. */
-  url: "https://nordhaus.example.com",
+  url: "https://nordvik.vercel.app",
   /** Optional logo image in /public. Leave empty to render the name as a wordmark. */
   logo: "",
   /**
@@ -40,7 +40,7 @@ export const site = {
   imageMode: "unsplash" as ImageMode,
 
   contact: {
-    email: "hello@nordhaus.example.com",
+    email: "hello@nordvik.example.com",
     phone: "+1 (212) 555-0148",
     hours: "Mon–Sat, 10:00–19:00",
   },

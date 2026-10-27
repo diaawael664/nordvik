@@ -81,7 +81,7 @@ export const gallery: { image: ImageKey; caption: string }[] = [
   { image: "room-rattan", caption: "Rattan & low light" },
 ];
 
-export const socialHandle = "@nordhaus.home";
+export const socialHandle = "@nordvik.home";
 
 /* ── Home 2 — Editorial ─────────────────────────────────────────────────── */
 

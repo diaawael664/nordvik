@@ -20,10 +20,10 @@ export const test = base.extend<{ freshVisitor: boolean; errors: string[] }>({
     if (!freshVisitor) {
       await context.addInitScript(() => {
         localStorage.setItem(
-          "nordhaus:consent",
+          "nordvik:consent",
           JSON.stringify({ analytics: true, marketing: false, decidedAt: "test" }),
         );
-        localStorage.setItem("nordhaus:newsletter-popup", JSON.stringify(new Date().toISOString()));
+        localStorage.setItem("nordvik:newsletter-popup", JSON.stringify(new Date().toISOString()));
       });
     }
     await provide(context);

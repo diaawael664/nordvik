@@ -13,7 +13,7 @@ import { createPersistentStore } from "@/lib/persistent-store";
 import { email as emailRule } from "@/lib/validate";
 
 /** When the pop-up was last dismissed or completed (ISO date), per visitor. */
-const seenStore = createPersistentStore<string | null>("nordhaus:newsletter-popup", null);
+const seenStore = createPersistentStore<string | null>("nordvik:newsletter-popup", null);
 
 /**
  * Timed newsletter sign-up with a first-order offer.

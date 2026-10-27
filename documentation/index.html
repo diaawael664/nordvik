@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Nordhaus Documentation</title>
-    <meta name="description" content="Documentation for the Nordhaus furniture and home decor Next.js template." />
+    <title>Nordvik Documentation</title>
+    <meta name="description" content="Documentation for the Nordvik furniture and home decor Next.js template." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -376,7 +376,7 @@
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="sidebar">Contents</button>
     <div class="layout">
       <aside class="sidebar" id="sidebar">
-        <a class="brand" href="#introduction">nordhaus<b>.</b></a>
+        <a class="brand" href="#introduction">nordvik<b>.</b></a>
         <p class="eyebrow version">Documentation · v1.0.0</p>
         <nav aria-label="Documentation">
           <ol>
@@ -417,7 +417,7 @@
       <main>
         <section id="introduction">
           <p class="eyebrow">Next.js 16 · TypeScript · Tailwind CSS 4</p>
-          <h1>Nordhaus documentation</h1>
+          <h1>Nordvik documentation</h1>
           <div class="dim"><span>W 100%</span></div>
           <p class="lead">
             A furniture and home decor store template. This guide covers installing it, rebranding it, editing every
@@ -501,7 +501,7 @@ npm run dev</code></pre>
 
         <section id="structure">
           <h2>Folder structure</h2>
-          <pre><code>nordhaus/
+          <pre><code>nordvik/
 ├── theme.config.ts        ← colors, fonts, corners, layout options
 ├── data/                  ← all store content (edit these)
 │   ├── site.ts            store name, contact, shipping, promo codes, pop-ups, feature switches
@@ -987,7 +987,7 @@ export const fontDisplay = Cormorant_Garamond({
             <code>src/app/layout.tsx</code> and add GA4 tags for these events. For any other tool, listen for the DOM
             event:
           </p>
-          <pre><code>window.addEventListener("nordhaus:track", (e) =&gt; {
+          <pre><code>window.addEventListener("nordvik:track", (e) =&gt; {
   console.log(e.detail.event, e.detail.ecommerce);
 });</code></pre>
           <p>
@@ -1342,14 +1342,14 @@ npm run test:e2e</code></pre>
         root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
       const label = () => (toggle.textContent = isDark() ? "Switch to light" : "Switch to dark");
       try {
-        const saved = localStorage.getItem("nordhaus-docs-theme");
+        const saved = localStorage.getItem("nordvik-docs-theme");
         if (saved) root.dataset.theme = saved;
       } catch {}
       label();
       toggle.addEventListener("click", () => {
         root.dataset.theme = isDark() ? "light" : "dark";
         try {
-          localStorage.setItem("nordhaus-docs-theme", root.dataset.theme);
+          localStorage.setItem("nordvik-docs-theme", root.dataset.theme);
         } catch {}
         label();
       });

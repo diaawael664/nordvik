@@ -1,6 +1,6 @@
 # Credits
 
-Everything below was used to build the Nordhaus template. Thank you to the people who make these freely available.
+Everything below was used to build the Nordvik template. Thank you to the people who make these freely available.
 
 ## Photography — live demo only
 

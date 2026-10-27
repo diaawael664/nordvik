@@ -205,7 +205,7 @@ export const products: Product[] = [
     weightKg: 88,
     stock: 9,
     leadTime: "Made to order — 5–6 weeks",
-    designer: "Studio Nordhaus",
+    designer: "Studio Nordvik",
     summary: "Low, modular and endlessly rearrangeable, with washable linen covers.",
     description:
       "Dune is a set of modules that clip together: arrange it as a straight sofa today and a corner piece when you move. The stonewashed linen covers zip off and go in the washing machine at 30°C.",
@@ -299,7 +299,7 @@ export const products: Product[] = [
     weightKg: 7,
     stock: 40,
     leadTime: "Ships in 1 week",
-    designer: "Studio Nordhaus",
+    designer: "Studio Nordvik",
     summary: "Fully upholstered with a curved back that holds you through a long dinner.",
     description:
       "Hedda's back curves gently around the shoulders, and the seat is shaped rather than flat. Long dinners stay comfortable. The ash legs are finished in a clear matte lacquer.",
@@ -351,7 +351,7 @@ export const products: Product[] = [
     weightKg: 13,
     stock: 11,
     leadTime: "Ships in 1 week",
-    designer: "Studio Nordhaus",
+    designer: "Studio Nordvik",
     summary: "Channel-stitched leather on a height-adjustable swivel base.",
     description:
       "Alva brings the warmth of a lounge chair to the desk. Gas-lift height adjustment and a gentle tilt make it work for a full day, and the channel-stitched leather looks right in a living room.",
@@ -462,7 +462,7 @@ export const products: Product[] = [
     weightKg: 3,
     stock: 80,
     leadTime: "Ships in 2–4 days",
-    designer: "Studio Nordhaus",
+    designer: "Studio Nordvik",
     summary: "Stool, side table, plant stand. Solid ash with a hand grip cut into the seat.",
     description:
       "Ask is the piece that ends up in every room. It's solid ash with mortise-and-tenon joints and a finger slot for carrying.",
@@ -519,7 +519,7 @@ export const products: Product[] = [
     weightKg: 1,
     stock: 48,
     leadTime: "Ships in 2–4 days",
-    designer: "Studio Nordhaus",
+    designer: "Studio Nordvik",
     summary: "A spun-aluminum dome with a white interior that spreads soft, even light.",
     description:
       "Halo is spun from a single sheet of aluminum and powder-coated inside and out. Hang one over a side table or three in a row over a dining table.",
@@ -573,7 +573,7 @@ export const products: Product[] = [
     weightKg: 34,
     stock: 12,
     leadTime: "Ships in 2–3 weeks",
-    designer: "Studio Nordhaus",
+    designer: "Studio Nordvik",
     summary: "A round pedestal-free table that seats four comfortably and six at a squeeze.",
     description:
       "Rund's splayed legs sit close to the edge, so there's no central pedestal in the way of anyone's knees. The top is solid white oak or a durable chalk laminate.",
@@ -626,7 +626,7 @@ export const products: Product[] = [
     weightKg: 12,
     stock: 16,
     leadTime: "Ships in 1 week",
-    designer: "Studio Nordhaus",
+    designer: "Studio Nordvik",
     summary: "An open oak cabinet for books, records or a stack of magazines.",
     description:
       "Nook works as a side table beside a sofa, a nightstand, or a low bookcase. The rounded corners are softened by hand.",
@@ -683,7 +683,7 @@ export const products: Product[] = [
     weightKg: 9,
     stock: 20,
     leadTime: "Ships in 1 week",
-    designer: "Studio Nordhaus",
+    designer: "Studio Nordvik",
     summary: "A soft-close drawer and an open shelf, at the right height for most beds.",
     description:
       "Natt keeps the essentials close and the clutter out of sight. The drawer closes silently on soft-close runners, which is welcome at 6 a.m.",
@@ -769,7 +769,7 @@ export const products: Product[] = [
     weightKg: 11,
     stock: 13,
     leadTime: "Ships in 1 week",
-    designer: "Studio Nordhaus",
+    designer: "Studio Nordvik",
     summary: "Hand-knotted wool with a softly faded heritage pattern.",
     description:
       "Atlas pairs a traditional medallion pattern with a washed palette of sand, gold and gray, so it sits quietly under modern furniture. A low pile makes it easy to clean and comfortable underfoot.",
@@ -798,7 +798,7 @@ export const products: Product[] = [
     weightKg: 1,
     stock: 70,
     leadTime: "Ships in 2–4 days",
-    designer: "Studio Nordhaus",
+    designer: "Studio Nordvik",
     summary: "Stonewashed linen cover with a feather insert and a hidden zip.",
     description:
       "Strand's linen is stonewashed for a soft, lived-in feel from the first day. The feather insert is included.",
@@ -927,7 +927,7 @@ export const products: Product[] = [
     weightKg: 36,
     stock: 12,
     leadTime: "Ships in 1–2 weeks",
-    designer: "Studio Nordhaus",
+    designer: "Studio Nordvik",
     summary: "A backless daybed for reading corners, studios and guest rooms.",
     description:
       "Liv works as a sofa with a few cushions, a bench under a window, or a single bed for guests. The firm foam top is upholstered in a dense wool blend.",
@@ -1063,7 +1063,7 @@ export const products: Product[] = [
     weightKg: 5,
     stock: 40,
     leadTime: "Ships in 2–4 days",
-    designer: "Studio Nordhaus",
+    designer: "Studio Nordvik",
     summary: "A farmhouse ladder-back chair with turned legs, made the traditional way.",
     description:
       "Gård is a country chair from our workshop's earliest days, turned and assembled with wooden joints. The honey finish deepens with use, and mixed sets look lovely around an old table.",
@@ -1155,7 +1155,7 @@ export const products: Product[] = [
     weightKg: 29,
     stock: 8,
     leadTime: "Ships in 1–2 weeks",
-    designer: "Studio Nordhaus",
+    designer: "Studio Nordvik",
     summary: "A generous desk for two screens, with a lacquered top and solid oak legs.",
     description:
       "Atelier has the depth for a monitor and a sketchbook side by side. The lacquered top wipes clean, and a grommet at the back routes cables neatly.",
@@ -1243,7 +1243,7 @@ export const products: Product[] = [
     weightKg: 22,
     stock: 10,
     leadTime: "Ships in 1–2 weeks",
-    designer: "Studio Nordhaus",
+    designer: "Studio Nordvik",
     summary: "A tall, slim wall-hung cabinet with open cubbies, for hallways and bathrooms.",
     description:
       "Pilar hangs off the floor so it's easy to clean under and makes a narrow space feel wider. The open cubbies hold towels, shoes or a small library.",
@@ -1312,7 +1312,7 @@ export const products: Product[] = [
     weightKg: 9,
     stock: 34,
     leadTime: "Ships in 2–4 days",
-    designer: "Studio Nordhaus",
+    designer: "Studio Nordvik",
     summary: "Three floating oak shelves in staggered lengths, with hidden brackets.",
     description:
       "Flyt comes as a set of three lengths so you can build an arrangement around a TV, a picture or a window. The brackets disappear into the back of each shelf.",
@@ -1487,7 +1487,7 @@ export const products: Product[] = [
     weightKg: 10,
     stock: 22,
     leadTime: "Ships in 1 week",
-    designer: "Studio Nordhaus",
+    designer: "Studio Nordvik",
     summary: "An oak bedside table with a soft-close drawer and a shelf for the books you'll read next.",
     description:
       "Morgon sits at the height of most mattresses, so your hand finds the lamp without looking. The drawer is lined with felt so nothing rattles at night.",
@@ -1731,7 +1731,7 @@ export const products: Product[] = [
     weightKg: 1,
     stock: 60,
     leadTime: "Ships in 2–4 days",
-    designer: "Studio Nordhaus",
+    designer: "Studio Nordvik",
     summary: "A classic unglazed terracotta pot that lets roots breathe.",
     description:
       "Terra is fired from natural clay and left unglazed, so excess water evaporates through the walls, just as succulents and herbs prefer.",
@@ -1765,7 +1765,7 @@ export const products: Product[] = [
     weightKg: 4,
     stock: 25,
     leadTime: "Ships in 2–4 days",
-    designer: "Studio Nordhaus",
+    designer: "Studio Nordvik",
     summary: "Two cast-concrete planters with a soft, speckled finish.",
     description:
       "Beton is cast by hand in small batches, which leaves each planter with its own pattern of tiny air bubbles. It's sealed inside, with a drainage hole and cork feet.",

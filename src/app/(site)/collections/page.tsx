@@ -7,7 +7,7 @@ import { Reveal } from "@/components/ui/reveal";
 
 export const metadata: Metadata = {
   title: "Lookbook",
-  description: "Rooms styled with Nordhaus furniture. Tap any marker to shop the piece.",
+  description: "Rooms styled with Nordvik furniture. Tap any marker to shop the piece.",
   alternates: { canonical: "/collections/" },
 };
 

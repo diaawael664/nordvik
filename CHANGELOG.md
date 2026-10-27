@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to the Nordhaus template. Dates are YYYY-MM-DD.
+All notable changes to the Nordvik template. Dates are YYYY-MM-DD.
 
 ## 1.0.0 — 2026-10-27
 

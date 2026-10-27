@@ -5,7 +5,7 @@ import { track } from "@/lib/analytics";
 import { getProductById } from "@/lib/catalog";
 import { createPersistentStore } from "@/lib/persistent-store";
 
-const store = createPersistentStore<string[]>("nordhaus:wishlist", []);
+const store = createPersistentStore<string[]>("nordvik:wishlist", []);
 
 type WishlistContextValue = {
   /** Saved product ids, most recent first. */

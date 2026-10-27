@@ -36,7 +36,7 @@ test("category pages have their own URL and title", async ({ page }) => {
 });
 
 test("filter layout: top panel replaces the sidebar", async ({ page }) => {
-  await page.addInitScript(() => localStorage.setItem("nordhaus:demo-layout", JSON.stringify({ shopFilters: "top" })));
+  await page.addInitScript(() => localStorage.setItem("nordvik:demo-layout", JSON.stringify({ shopFilters: "top" })));
   await page.goto("/shop/");
   await expect(page.getByRole("complementary", { name: "Filters" })).toHaveCount(0);
   await page

@@ -65,13 +65,10 @@ const browser = await chromium.launch({ channel: process.env.PW_CHANNEL || undef
 async function newPage(viewport, deviceScaleFactor = 1) {
   const context = await browser.newContext({ viewport, deviceScaleFactor, reducedMotion: "reduce" });
   await context.addInitScript(() => {
+    localStorage.setItem("nordvik:consent", JSON.stringify({ analytics: false, marketing: false, decidedAt: "shots" }));
+    localStorage.setItem("nordvik:newsletter-popup", JSON.stringify(new Date().toISOString()));
     localStorage.setItem(
-      "nordhaus:consent",
-      JSON.stringify({ analytics: false, marketing: false, decidedAt: "shots" }),
-    );
-    localStorage.setItem("nordhaus:newsletter-popup", JSON.stringify(new Date().toISOString()));
-    localStorage.setItem(
-      "nordhaus:cart",
+      "nordvik:cart",
       JSON.stringify([
         { key: "p01|Pine velvet", productId: "p01", color: "Pine velvet", options: {}, quantity: 1 },
         { key: "p14|Graphite", productId: "p14", color: "Graphite", options: {}, quantity: 1 },
@@ -140,7 +137,7 @@ async function composite(file, width, height, html, type = "jpeg") {
 }
 
 const title = (size) =>
-  `<div style="font-family:Fraunces,serif;font-size:${size}px;letter-spacing:-.035em;line-height:.95">nordhaus<span style="color:#2F5A4C">.</span></div>`;
+  `<div style="font-family:Fraunces,serif;font-size:${size}px;letter-spacing:-.035em;line-height:.95">nordvik<span style="color:#2F5A4C">.</span></div>`;
 const eyebrow = (text, size) =>
   `<div style="font-family:'IBM Plex Mono',monospace;font-size:${size}px;letter-spacing:.16em;text-transform:uppercase;color:#625A51">${text}</div>`;
 

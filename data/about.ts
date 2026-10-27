@@ -11,7 +11,7 @@ export const about = {
     image: "studio-exterior" as ImageKey,
   },
   story: [
-    "Nordhaus started in 1987 as a two-person joinery on the edge of Copenhagen, repairing chairs that other people had given up on. Fixing them taught us what makes furniture last: solid wood, honest joints, and covers you can take off and wash.",
+    "Nordvik started in 1987 as a two-person joinery on the edge of Copenhagen, repairing chairs that other people had given up on. Fixing them taught us what makes furniture last: solid wood, honest joints, and covers you can take off and wash.",
     "Today we're a team of forty-two, and we still build the way we learned then. Frames are kiln-dried hardwood, joined with dowels and glue. Fabrics are woven to last tens of thousands of rubs. Every piece is designed so that, decades from now, it can be repaired instead of replaced.",
   ],
   quote: {

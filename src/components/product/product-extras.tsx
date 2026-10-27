@@ -101,7 +101,7 @@ export function BackInStock({ product }: { product: Product }) {
 
 /* ── Delivery estimate ───────────────────────────────────────────────────── */
 
-const zipStore = createPersistentStore<string>("nordhaus:zip", "");
+const zipStore = createPersistentStore<string>("nordvik:zip", "");
 const dateFmt = new Intl.DateTimeFormat("en-US", { weekday: "short", month: "short", day: "numeric" });
 
 export function DeliveryEstimate({ product }: { product: Product }) {

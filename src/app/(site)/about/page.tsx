@@ -35,7 +35,7 @@ export default function AboutPage() {
         </div>
       </Container>
 
-      <section aria-label="Nordhaus in numbers" className="border-y border-line">
+      <section aria-label="Nordvik in numbers" className="border-y border-line">
         <Container>
           <dl className="grid grid-cols-2 lg:grid-cols-4">
             {about.stats.map((s, i) => (

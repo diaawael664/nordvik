@@ -11,7 +11,7 @@ function hookFor<T>(store: ReturnType<typeof createPersistentStore<T>>) {
 
 /* ── Recently viewed (product ids, newest first) ────────────────────────── */
 
-const recent = createPersistentStore<string[]>("nordhaus:recent", []);
+const recent = createPersistentStore<string[]>("nordvik:recent", []);
 export const useRecentlyViewed = hookFor(recent);
 export const addRecentlyViewed = (id: string) =>
   recent.set((prev) => [id, ...prev.filter((x) => x !== id)].slice(0, 12));
@@ -28,13 +28,13 @@ export type DemoOrder = {
   items: { productId: string; name: string; quantity: number; variant: string; price: number }[];
 };
 
-const orders = createPersistentStore<DemoOrder[]>("nordhaus:orders", []);
+const orders = createPersistentStore<DemoOrder[]>("nordvik:orders", []);
 export const useDemoOrders = hookFor(orders);
 export const addDemoOrder = (o: DemoOrder) => orders.set((prev) => [o, ...prev]);
 
 /* ── Back-in-stock requests (product id → email) ────────────────────────── */
 
-const restock = createPersistentStore<Record<string, string>>("nordhaus:restock", {});
+const restock = createPersistentStore<Record<string, string>>("nordvik:restock", {});
 export const useRestockRequests = hookFor(restock);
 export const requestRestock = (productId: string, email: string) =>
   restock.set((prev) => ({ ...prev, [productId]: email }));
@@ -43,7 +43,7 @@ export const requestRestock = (productId: string, email: string) =>
 
 export const MAX_SWATCHES = 6;
 export type Swatch = { name: string; hex: string; product: string };
-const swatches = createPersistentStore<Swatch[]>("nordhaus:swatches", []);
+const swatches = createPersistentStore<Swatch[]>("nordvik:swatches", []);
 export const useSwatchTray = hookFor(swatches);
 export const toggleSwatch = (s: Swatch) =>
   swatches.set((prev) =>

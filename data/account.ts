@@ -29,7 +29,7 @@ export const sampleOrders: SampleOrder[] = [
       { slug: "beam-floor-lamp", quantity: 1 },
     ],
     total: 1112.4,
-    carrier: { name: "Nordhaus Delivery", tracking: "NHD-55-0193-4" },
+    carrier: { name: "Nordvik Delivery", tracking: "NHD-55-0193-4" },
   },
   {
     id: "NH-196027",

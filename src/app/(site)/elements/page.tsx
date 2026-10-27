@@ -14,7 +14,7 @@ import { InteractiveDemo } from "./interactive-demo";
 export const metadata: Metadata = {
   title: "UI elements",
   description:
-    "Every reusable component in the Nordhaus template: tokens, type, buttons, product cards and form controls.",
+    "Every reusable component in the Nordvik template: tokens, type, buttons, product cards and form controls.",
 };
 
 const swatchNames: { key: keyof typeof colors.light; label: string }[] = [

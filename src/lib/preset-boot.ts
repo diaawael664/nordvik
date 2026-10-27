@@ -1,5 +1,5 @@
 /** localStorage key for the demo color preset chosen in the style switcher. */
-export const PRESET_KEY = "nordhaus:demo-preset";
+export const PRESET_KEY = "nordvik:demo-preset";
 
 /**
  * Inline script for <head> (demo only): applies a previewed preset before the
