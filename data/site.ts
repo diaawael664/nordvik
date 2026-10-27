@@ -14,7 +14,7 @@ export const site = {
   description:
     "Nordvik makes solid-wood furniture, lighting and objects for calm, considered homes. Designed in Copenhagen, built to last decades.",
   /** Used for canonical URLs, Open Graph and the sitemap. No trailing slash. */
-  url: "https://nordvik.vercel.app",
+  url: "https://nordvik-xact.vercel.app",
   /** Optional logo image in /public. Leave empty to render the name as a wordmark. */
   logo: "",
   /**
