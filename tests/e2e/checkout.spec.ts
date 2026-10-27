@@ -39,7 +39,7 @@ test("promo code, validation, placing an order and tracking it", async ({ page, 
   await expect(page.getByText("Thank you, your order is placed")).toBeVisible();
 
   await page.getByRole("link", { name: "Track your order" }).click();
-  await expect(page.getByRole("heading", { name: /Order NH-/ })).toBeVisible();
+  await expect(page.getByRole("heading", { name: /Order NV-/ })).toBeVisible();
   await expect(page.getByText("Kvist Bar Stool")).toBeVisible();
   expect(errors).toEqual([]);
 });

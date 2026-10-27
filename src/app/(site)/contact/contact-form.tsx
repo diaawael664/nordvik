@@ -67,7 +67,7 @@ export function ContactForm() {
       <Field
         label="Order number"
         name="order"
-        placeholder="Optional, e.g. NH-10482"
+        placeholder="Optional, e.g. NV-10482"
         hint="Helps us find your order faster."
       />
       <div className="sm:col-span-2">

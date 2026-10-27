@@ -113,7 +113,7 @@ export function CheckoutView() {
     if (Object.keys(next).length) return focusFirstError(e.currentTarget, next);
 
     // Demo: no payment is taken. Send `values` to your payment provider here.
-    const id = `NH-${String(Date.now()).slice(-6)}`;
+    const id = `NV-${String(Date.now()).slice(-6)}`;
     track("purchase", {
       transaction_id: id,
       value: grandTotal,

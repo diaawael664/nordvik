@@ -21,7 +21,7 @@ export type SampleOrder = {
 
 export const sampleOrders: SampleOrder[] = [
   {
-    id: "NH-208341",
+    id: "NV-208341",
     date: "2026-10-09",
     status: 2,
     items: [
@@ -32,7 +32,7 @@ export const sampleOrders: SampleOrder[] = [
     carrier: { name: "Nordvik Delivery", tracking: "NHD-55-0193-4" },
   },
   {
-    id: "NH-196027",
+    id: "NV-196027",
     date: "2026-07-22",
     status: 4,
     items: [
