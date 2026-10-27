@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Nordhaus mark: a lowercase "n" drawn as a bent-oak arch, with the accent dot. Replace with your own logo. -->
+  <rect width="64" height="64" rx="14" fill="#24211E"/>
+  <path d="M18 46V27c0-6 5-10 11-10s11 4 11 10v19" fill="none" stroke="#ECE6DD" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="48" cy="44" r="4" fill="#86B8A4"/>
+</svg>

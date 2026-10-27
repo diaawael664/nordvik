@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" preserveAspectRatio="xMidYMid slice">
+  <rect width="1600" height="1200" fill="#E4D8C6"/>
+  <g stroke="#24211E" stroke-opacity=".28" stroke-width="2" fill="none">
+    <path d="M200 900h1200M200 885v30M1400 885v30"/>
+    <path d="M1460 220v600M1445 220h30M1445 820h30"/>
+    <rect x="420" y="380" width="760" height="360" rx="6"/>
+  </g>
+  <text x="800" y="560" text-anchor="middle" font-family="ui-monospace, monospace" font-size="30" letter-spacing="6" fill="#24211E" fill-opacity=".6">ROOM-ENTRY</text>
+  <text x="800" y="625" text-anchor="middle" font-family="Georgia, serif" font-size="30" fill="#24211E" fill-opacity=".55">Entryway with a black sideboard, round</text>
+  <text x="800" y="665" text-anchor="middle" font-family="Georgia, serif" font-size="30" fill="#24211E" fill-opacity=".55">mirror and woven pendant</text>
+  <text x="800" y="960" text-anchor="middle" font-family="ui-monospace, monospace" font-size="22" letter-spacing="4" fill="#24211E" fill-opacity=".45">REPLACE WITH YOUR PHOTO</text>
+</svg>

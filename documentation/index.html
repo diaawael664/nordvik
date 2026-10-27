@@ -1,0 +1,1358 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nordhaus Documentation</title>
+    <meta name="description" content="Documentation for the Nordhaus furniture and home decor Next.js template." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..600&family=Manrope:wght@400..700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f6f2ec;
+        --surface: #fbf9f5;
+        --sand: #e4d8c6;
+        --ink: #24211e;
+        --muted: #625a51;
+        --line: #dcd2c3;
+        --accent: #2f5a4c;
+        --on-accent: #f6f2ec;
+        --wood: #5b3a29;
+        --code: #efe8dd;
+        color-scheme: light;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) {
+          --bg: #171513;
+          --surface: #211e1b;
+          --sand: #2f2a25;
+          --ink: #ece6dd;
+          --muted: #a39a8f;
+          --line: #3a342e;
+          --accent: #86b8a4;
+          --on-accent: #171513;
+          --wood: #d2ae8a;
+          --code: #252119;
+          color-scheme: dark;
+        }
+      }
+      :root[data-theme="dark"] {
+        --bg: #171513;
+        --surface: #211e1b;
+        --sand: #2f2a25;
+        --ink: #ece6dd;
+        --muted: #a39a8f;
+        --line: #3a342e;
+        --accent: #86b8a4;
+        --on-accent: #171513;
+        --wood: #d2ae8a;
+        --code: #252119;
+        color-scheme: dark;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 24px;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font:
+          16px/1.7 Manrope,
+          system-ui,
+          sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      a {
+        color: var(--accent);
+        text-underline-offset: 3px;
+      }
+      a:hover {
+        text-decoration-thickness: 2px;
+      }
+      :focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 3px;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: Fraunces, Georgia, serif;
+        font-weight: 400;
+        letter-spacing: -0.015em;
+        line-height: 1.15;
+      }
+      h1 {
+        font-size: clamp(2.4rem, 5vw, 3.6rem);
+        margin: 0 0 0.4em;
+        letter-spacing: -0.03em;
+      }
+      h2 {
+        font-size: 2rem;
+        margin: 0 0 0.6em;
+        padding-top: 1.2em;
+      }
+      h3 {
+        font-size: 1.35rem;
+        margin: 2em 0 0.5em;
+      }
+      p,
+      ul,
+      ol {
+        margin: 0 0 1em;
+      }
+      li {
+        margin: 0.25em 0;
+      }
+      code,
+      pre,
+      kbd {
+        font-family: "IBM Plex Mono", ui-monospace, monospace;
+        font-size: 0.86em;
+      }
+      :not(pre) > code {
+        background: var(--code);
+        padding: 0.12em 0.4em;
+        border-radius: 3px;
+      }
+      pre {
+        position: relative;
+        background: var(--code);
+        border: 1px solid var(--line);
+        padding: 16px 18px;
+        overflow-x: auto;
+        line-height: 1.6;
+        margin: 0 0 1.4em;
+      }
+      pre button {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        font:
+          500 11px Manrope,
+          sans-serif;
+        letter-spacing: 0.04em;
+        border: 1px solid var(--line);
+        background: var(--surface);
+        color: var(--ink);
+        padding: 4px 10px;
+        cursor: pointer;
+      }
+      pre button:hover {
+        border-color: var(--ink);
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 0 0 1.6em;
+        font-size: 0.94em;
+      }
+      th,
+      td {
+        text-align: left;
+        vertical-align: top;
+        padding: 10px 12px 10px 0;
+        border-bottom: 1px solid var(--line);
+      }
+      th {
+        font:
+          500 11px "IBM Plex Mono",
+          monospace;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--muted);
+        border-bottom-color: var(--ink);
+      }
+      .eyebrow {
+        font:
+          500 11px "IBM Plex Mono",
+          monospace;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      .lead {
+        font-size: 1.2rem;
+        color: var(--muted);
+        max-width: 40em;
+      }
+      .note {
+        border-left: 2px solid var(--accent);
+        background: var(--surface);
+        padding: 14px 18px;
+        margin: 0 0 1.4em;
+      }
+      .note.warn {
+        border-left-color: var(--wood);
+      }
+      .note p:last-child {
+        margin: 0;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 12px;
+        margin: 0 0 1.6em;
+      }
+      .card {
+        border: 1px solid var(--line);
+        background: var(--surface);
+        padding: 16px 18px;
+      }
+      .card strong {
+        display: block;
+        font-family: Fraunces, serif;
+        font-weight: 400;
+        font-size: 1.15rem;
+        margin-bottom: 4px;
+      }
+      .card p {
+        margin: 0;
+        font-size: 0.92em;
+        color: var(--muted);
+      }
+      .dim {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--muted);
+        font:
+          500 11px "IBM Plex Mono",
+          monospace;
+        letter-spacing: 0.14em;
+        margin: 8px 0 32px;
+        max-width: 420px;
+      }
+      .dim::before,
+      .dim::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: currentColor;
+      }
+      .dim span::before {
+        content: "";
+      }
+
+      .layout {
+        display: grid;
+        grid-template-columns: 280px minmax(0, 1fr);
+        max-width: 1320px;
+        margin: 0 auto;
+      }
+      .sidebar {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        overflow-y: auto;
+        padding: 32px 24px 48px 32px;
+        border-right: 1px solid var(--line);
+      }
+      .brand {
+        font-family: Fraunces, serif;
+        font-size: 1.7rem;
+        letter-spacing: -0.03em;
+        color: var(--ink);
+        text-decoration: none;
+        display: block;
+      }
+      .brand b {
+        color: var(--accent);
+        font-weight: 400;
+      }
+      .version {
+        margin: 4px 0 28px;
+      }
+      .sidebar nav ol {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .sidebar nav li {
+        margin: 0;
+      }
+      .sidebar nav a {
+        display: block;
+        padding: 5px 10px;
+        margin-left: -10px;
+        color: var(--muted);
+        text-decoration: none;
+        font-size: 0.92rem;
+        border-left: 2px solid transparent;
+      }
+      .sidebar nav a:hover {
+        color: var(--ink);
+      }
+      .sidebar nav a[aria-current="true"] {
+        color: var(--ink);
+        border-left-color: var(--accent);
+        font-weight: 600;
+      }
+      .sidebar nav .group {
+        margin: 18px 0 6px;
+      }
+      .toggle {
+        margin-top: 28px;
+        font:
+          500 12px Manrope,
+          sans-serif;
+        border: 1px solid var(--line);
+        background: transparent;
+        color: var(--ink);
+        padding: 8px 12px;
+        cursor: pointer;
+      }
+      main {
+        padding: 48px clamp(20px, 5vw, 72px) 120px;
+        max-width: 900px;
+        min-width: 0;
+      }
+      section {
+        border-top: 1px solid var(--line);
+        margin-top: 56px;
+      }
+      section:first-of-type {
+        border-top: 0;
+        margin-top: 0;
+      }
+      .menu-btn {
+        display: none;
+      }
+      @media (max-width: 900px) {
+        .layout {
+          grid-template-columns: 1fr;
+        }
+        .sidebar {
+          position: fixed;
+          inset: 0 auto 0 0;
+          width: 290px;
+          background: var(--bg);
+          z-index: 20;
+          transform: translateX(-100%);
+          transition: transform 0.3s;
+          box-shadow: 0 0 40px rgb(0 0 0 / 0.2);
+        }
+        .sidebar.open {
+          transform: none;
+        }
+        .menu-btn {
+          display: inline-flex;
+          position: sticky;
+          top: 12px;
+          z-index: 10;
+          margin: 12px 0 0 16px;
+          font:
+            600 13px Manrope,
+            sans-serif;
+          border: 1px solid var(--ink);
+          background: var(--bg);
+          color: var(--ink);
+          padding: 8px 14px;
+          cursor: pointer;
+        }
+        main {
+          padding-top: 24px;
+        }
+        table {
+          display: block;
+          overflow-x: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="sidebar">Contents</button>
+    <div class="layout">
+      <aside class="sidebar" id="sidebar">
+        <a class="brand" href="#introduction">nordhaus<b>.</b></a>
+        <p class="eyebrow version">Documentation · v1.0.0</p>
+        <nav aria-label="Documentation">
+          <ol>
+            <li class="eyebrow group">Start</li>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#installation">Installation</a></li>
+            <li><a href="#structure">Folder structure</a></li>
+            <li class="eyebrow group">Make it yours</li>
+            <li><a href="#store-info">Store information</a></li>
+            <li><a href="#colors-fonts">Colors, fonts &amp; logo</a></li>
+            <li><a href="#layout-options">Layout options</a></li>
+            <li><a href="#images">Images</a></li>
+            <li class="eyebrow group">Content</li>
+            <li><a href="#products">Products &amp; categories</a></li>
+            <li><a href="#home-pages">Home pages &amp; sections</a></li>
+            <li><a href="#menus">Menus</a></li>
+            <li><a href="#lookbook">Lookbook hotspots</a></li>
+            <li><a href="#blog">Blog posts (MDX)</a></li>
+            <li><a href="#other-content">Other pages</a></li>
+            <li class="eyebrow group">Store features</li>
+            <li><a href="#commerce">Cart, promos &amp; sets</a></li>
+            <li><a href="#popups">Pop-up, cookies &amp; analytics</a></li>
+            <li><a href="#backend">Connect a backend</a></li>
+            <li><a href="#forms">Connect forms</a></li>
+            <li class="eyebrow group">Ship it</li>
+            <li><a href="#seo">SEO</a></li>
+            <li><a href="#deploy">Deployment</a></li>
+            <li><a href="#quality">Testing &amp; quality</a></li>
+            <li><a href="#accessibility">Accessibility</a></li>
+            <li><a href="#faq">Troubleshooting</a></li>
+            <li><a href="#credits">Credits</a></li>
+            <li><a href="#changelog">Changelog</a></li>
+          </ol>
+        </nav>
+        <button class="toggle" type="button" id="theme-toggle">Switch to dark</button>
+      </aside>
+
+      <main>
+        <section id="introduction">
+          <p class="eyebrow">Next.js 16 · TypeScript · Tailwind CSS 4</p>
+          <h1>Nordhaus documentation</h1>
+          <div class="dim"><span>W 100%</span></div>
+          <p class="lead">
+            A furniture and home decor store template. This guide covers installing it, rebranding it, editing every
+            piece of content, connecting a real shop, and deploying.
+          </p>
+          <div class="grid">
+            <div class="card">
+              <strong>3 home layouts</strong>
+              <p>Classic, Editorial and Modern, built from shared sections you can reorder.</p>
+            </div>
+            <div class="card">
+              <strong>Complete shop</strong>
+              <p>Category pages, filters, product pages, cart, checkout, wishlist and account.</p>
+            </div>
+            <div class="card">
+              <strong>One-file theming</strong>
+              <p>Three color presets with dark mode, fonts and layout options in <code>theme.config.ts</code>.</p>
+            </div>
+            <div class="card">
+              <strong>Backend-ready</strong>
+              <p>Every page reads one catalog module. Sync from Shopify, or plug in your own platform.</p>
+            </div>
+          </div>
+          <p>
+            Everything a customer sees comes from files in <code>/data</code> and <code>/content</code>, so most changes
+            never touch a component. The site builds to static HTML, so it can be hosted anywhere and needs no server.
+          </p>
+        </section>
+
+        <section id="installation">
+          <h2>Installation</h2>
+          <p>
+            You need <a href="https://nodejs.org">Node.js</a> 20.9 or newer. Unzip the template, open a terminal in its
+            folder, then:
+          </p>
+          <pre><code>npm install
+npm run dev</code></pre>
+          <p>
+            Open <a href="http://localhost:3000">http://localhost:3000</a>. Changes to any file reload the page
+            instantly.
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th>Command</th>
+                <th>What it does</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>npm run dev</code></td>
+                <td>Development server with hot reload.</td>
+              </tr>
+              <tr>
+                <td><code>npm run build</code></td>
+                <td>Builds the static site into <code>/out</code>. This is the folder you deploy.</td>
+              </tr>
+              <tr>
+                <td><code>npm start</code></td>
+                <td>Serves <code>/out</code> locally to check the production build.</td>
+              </tr>
+              <tr>
+                <td><code>npm run lint</code> · <code>npm run format</code> · <code>npm run typecheck</code></td>
+                <td>ESLint, Prettier and TypeScript checks.</td>
+              </tr>
+              <tr>
+                <td><code>npm run test:e2e</code></td>
+                <td>End-to-end tests against the built site (see <a href="#quality">Testing</a>).</td>
+              </tr>
+              <tr>
+                <td><code>npm run placeholders</code></td>
+                <td>Generates neutral placeholder images (see <a href="#images">Images</a>).</td>
+              </tr>
+              <tr>
+                <td><code>npm run catalog:shopify</code></td>
+                <td>Syncs products from Shopify (see <a href="#backend">Connect a backend</a>).</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="structure">
+          <h2>Folder structure</h2>
+          <pre><code>nordhaus/
+├── theme.config.ts        ← colors, fonts, corners, layout options
+├── data/                  ← all store content (edit these)
+│   ├── site.ts            store name, contact, shipping, promo codes, pop-ups, feature switches
+│   ├── products.ts        product catalog
+│   ├── categories.ts      categories
+│   ├── images.ts          photo library (every image is referenced by key)
+│   ├── navigation.ts      header mega menu and footer links
+│   ├── home.ts            hero slides, deal, press, gallery, Home 2 and 3 copy
+│   ├── collections.ts     lookbook rooms and hotspots
+│   ├── bundles.ts         "complete the look" sets
+│   ├── blog.ts            blog post details and categories
+│   ├── testimonials.ts · reviews.ts · faq.ts · about.ts · stores.ts · account.ts · filters.ts
+│   └── shopify/catalog.ts generated by the Shopify sync (empty by default)
+├── content/blog/          ← blog post bodies (.mdx)
+├── public/                ← icons, share image, placeholders
+├── scripts/               ← placeholder generator, Shopify sync, post-build step
+├── src/
+│   ├── app/               pages (App Router). (site) = store pages, (focus) = checkout and coming soon
+│   ├── components/        ui/ · layout/ · product/ · sections/ · cart/ · blog/
+│   ├── context/           cart, wishlist and overlay state
+│   └── lib/               catalog, checkout handoff, analytics, filtering, validation, helpers
+├── tests/e2e/             ← Playwright tests
+└── documentation/         ← this guide</code></pre>
+        </section>
+
+        <section id="store-info">
+          <h2>Store information</h2>
+          <p>Open <code>data/site.ts</code>. Every setting has a comment. The most important ones:</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Setting</th>
+                <th>Use</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>name</code>, <code>tagline</code>, <code>description</code></td>
+                <td>Shown in the header, footer, browser tabs and search results.</td>
+              </tr>
+              <tr>
+                <td><code>url</code></td>
+                <td>
+                  Your live address, no trailing slash. Used for the sitemap, canonical links and share previews.
+                  <strong>Set it before you deploy.</strong>
+                </td>
+              </tr>
+              <tr>
+                <td><code>currency</code>, <code>locale</code></td>
+                <td>Formats every price, e.g. <code>"EUR"</code> and <code>"de-DE"</code>.</td>
+              </tr>
+              <tr>
+                <td><code>contact</code>, <code>social</code></td>
+                <td>Footer, contact page and Coming Soon page.</td>
+              </tr>
+              <tr>
+                <td><code>announcements</code></td>
+                <td>Rotating messages in the top bar. An empty list hides the bar.</td>
+              </tr>
+              <tr>
+                <td><code>features</code></td>
+                <td>
+                  The four promises in the features bar (icon names come from <a href="https://lucide.dev">Lucide</a>).
+                </td>
+              </tr>
+              <tr>
+                <td><code>freeShippingThreshold</code>, <code>shippingFee</code>, <code>taxRate</code></td>
+                <td>Cart and checkout totals.</td>
+              </tr>
+              <tr>
+                <td><code>demo.styleSwitcher</code></td>
+                <td>
+                  The "Customize" panel. <strong>Set to <code>false</code> before going live.</strong>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="colors-fonts">
+          <h2>Colors, fonts &amp; logo</h2>
+          <h3>Color presets</h3>
+          <p><code>theme.config.ts</code> holds three complete presets, each with a light and a dark palette:</p>
+          <div class="grid">
+            <div class="card">
+              <strong>Oak &amp; Pine</strong>
+              <p>Warm linen, walnut and a fjord-pine accent. 2px corners.</p>
+            </div>
+            <div class="card">
+              <strong>Clay &amp; Linen</strong>
+              <p>Plaster neutrals and a fired-clay accent. Soft 10px corners.</p>
+            </div>
+            <div class="card">
+              <strong>Nordic Stone</strong>
+              <p>Cool stone grays and a fjord-blue accent. Square corners.</p>
+            </div>
+          </div>
+          <p>Choose one with a single line:</p>
+          <pre><code>export const activePreset: PresetName = "clay";</code></pre>
+          <p>
+            To use your brand colors, edit a preset's values. Each token has a job, documented in the file:
+            <code>bg</code> (page), <code>surface</code> (cards, inputs), <code>sand</code> (tinted blocks),
+            <code>ink</code> (text), <code>muted</code> (secondary text), <code>line</code> (borders),
+            <code>accent</code> (buttons, links, focus), <code>onAccent</code>, <code>wood</code> (sale badges,
+            ratings), <code>inverse</code> / <code>onInverse</code> (footer, announcement bar).
+          </p>
+          <div class="note">
+            <p>
+              Every preset passes WCAG AA contrast (4.5:1) for the text and background pairs the template uses. If you
+              change colors, check <code>ink</code> and <code>muted</code> on <code>bg</code>, <code>surface</code> and
+              <code>sand</code>, and <code>onAccent</code> on <code>accent</code>, with a tool such as
+              <a href="https://webaim.org/resources/contrastchecker/">WebAIM's contrast checker</a>.
+            </p>
+          </div>
+          <h3>Fonts</h3>
+          <p>
+            Fonts are loaded with <code>next/font</code>, which downloads them at build time and serves them from your
+            own domain. Replace any import at the top of <code>theme.config.ts</code> with another
+            <a href="https://fonts.google.com">Google Font</a> and keep the <code>variable</code> name:
+          </p>
+          <pre><code>import { Cormorant_Garamond } from "next/font/google";
+
+export const fontDisplay = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-display-face",
+  display: "swap",
+});</code></pre>
+          <h3>Logo and icons</h3>
+          <ul>
+            <li>
+              <strong>Header and footer:</strong> by default the store name is set as a wordmark. For an image logo, put
+              the file in <code>/public</code> and set <code>logo: "/logo.svg"</code> in <code>data/site.ts</code>.
+            </li>
+            <li>
+              <strong>Browser icon:</strong> replace <code>public/icon.svg</code>, <code>public/favicon-48.png</code>,
+              <code>public/apple-icon.png</code> (180×180) and <code>public/icon-512.png</code>.
+            </li>
+            <li>
+              <strong>Share image:</strong> replace <code>public/og.png</code> (1200×630). Product and blog pages use
+              their own photo automatically.
+            </li>
+          </ul>
+        </section>
+
+        <section id="layout-options">
+          <h2>Layout options</h2>
+          <p>The <code>layout</code> block in <code>theme.config.ts</code> switches layouts across the whole site:</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Option</th>
+                <th>Values</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>header</code></td>
+                <td>
+                  <code>"overlay"</code>: transparent over the Classic home hero, solid once you scroll.
+                  <code>"solid"</code>: always solid.
+                </td>
+              </tr>
+              <tr>
+                <td><code>shopFilters</code></td>
+                <td>
+                  <code>"left"</code> or <code>"right"</code> sidebar, or <code>"top"</code>: a filter panel that opens
+                  above a four-column grid.
+                </td>
+              </tr>
+              <tr>
+                <td><code>productGallery</code></td>
+                <td>
+                  <code>"side"</code> thumbnails, <code>"bottom"</code> thumbnails, or <code>"stacked"</code>: every
+                  image large in a column on desktop.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            The demo's "Customize" panel previews these options in the visitor's browser only. Your configured values
+            are always what search engines and first-time visitors get.
+          </p>
+        </section>
+
+        <section id="images">
+          <h2>Images</h2>
+          <p>Components never contain image addresses. Every photo is a key in <code>data/images.ts</code>:</p>
+          <pre><code>"sofa-velvet-green": {
+  src: "https://images.unsplash.com/photo-…",
+  alt: "Deep green velvet three-seat sofa on a pale oak floor",
+},</code></pre>
+          <ul>
+            <li>
+              <strong>Use your own photos:</strong> put them in <code>/public/images/</code> and set
+              <code>src: "/images/my-sofa.jpg"</code>, or use any full URL. Always write an <code>alt</code> that
+              describes the photo; screen readers announce it.
+            </li>
+            <li>
+              <strong>Product images</strong> are keys (or URLs) in each product's <code>images</code> list: the first
+              is the card image, the second appears on hover.
+            </li>
+            <li>
+              <strong>Placeholder mode:</strong> run <code>npm run placeholders</code>, then set
+              <code>imageMode: "placeholder"</code> in <code>data/site.ts</code>. Every photo becomes a neutral panel
+              labelled with its key and description, so you can see what to replace. The template ships this way.
+            </li>
+            <li>
+              <strong>Switching modes at build time:</strong> the <code>NEXT_PUBLIC_IMAGE_MODE</code> environment
+              variable (<code>placeholder</code> or <code>unsplash</code>) overrides <code>imageMode</code> without
+              editing the file.
+            </li>
+          </ul>
+          <div class="note warn">
+            <p>
+              The live demo's photos come from Unsplash and are not included in the download. See
+              <a href="#credits">Credits</a>. Product and room photos have the biggest effect on how the store looks and
+              on its loading speed: export them as WebP or AVIF, about 2000px wide, and host them on your own domain or
+              CDN.
+            </p>
+          </div>
+          <p>
+            Remote images are resized through the custom loader in <code>src/lib/image-loader.ts</code> (Unsplash and
+            Shopify CDNs are supported). Files in <code>/public</code> are served as-is, so size them before uploading.
+          </p>
+        </section>
+
+        <section id="products">
+          <h2>Products &amp; categories</h2>
+          <p>
+            Add a product by copying any entry in <code>data/products.ts</code>. TypeScript flags missing or misspelled
+            fields as you type.
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>slug</code></td>
+                <td>Its address: <code>/product/&lt;slug&gt;/</code>. Lowercase, hyphens.</td>
+              </tr>
+              <tr>
+                <td><code>category</code></td>
+                <td>Must match a <code>slug</code> in <code>data/categories.ts</code>.</td>
+              </tr>
+              <tr>
+                <td><code>price</code>, <code>compareAt</code></td>
+                <td>Setting <code>compareAt</code> (the original price) marks the product as on sale.</td>
+              </tr>
+              <tr>
+                <td><code>colors</code></td>
+                <td>
+                  <code>{ name, hex, family }</code>. <code>family</code> groups colors in the shop filter (families are
+                  in <code>data/filters.ts</code>). Add <code>image</code> to switch the gallery to that colorway.
+                </td>
+              </tr>
+              <tr>
+                <td><code>options</code></td>
+                <td>Extra selectors such as Size, with an optional <code>priceDelta</code> per value.</td>
+              </tr>
+              <tr>
+                <td><code>dimensions</code></td>
+                <td>
+                  Centimeters. Drawn on the product photo and converted to inches on the page. Set width to
+                  <code>0</code> to hide dimensions.
+                </td>
+              </tr>
+              <tr>
+                <td><code>stock</code></td>
+                <td><code>0</code> shows "Sold out" and a back-in-stock form. 1–5 shows "Only N left".</td>
+              </tr>
+              <tr>
+                <td><code>leadTime</code></td>
+                <td>Plain text such as <code>"Ships in 2–3 weeks"</code>. Also drives the delivery-date estimate.</td>
+              </tr>
+              <tr>
+                <td><code>isNew</code>, <code>isBestseller</code></td>
+                <td>Badges, and the New arrivals and Best sellers lists.</td>
+              </tr>
+              <tr>
+                <td><code>materials</code></td>
+                <td>Material filter. Fabric materials (velvet, linen…) show the free-swatch option.</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            Each category gets its own page at <code>/shop/&lt;slug&gt;/</code>. Reviews for the demo come from
+            <code>data/reviews.ts</code>; add product-specific ones under <code>byProduct</code>, or replace the file
+            with your reviews platform.
+          </p>
+        </section>
+
+        <section id="home-pages">
+          <h2>Home pages &amp; sections</h2>
+          <p>
+            The three home layouts are <code>src/app/(site)/page.tsx</code> (Classic),
+            <code>home-editorial/page.tsx</code> and <code>home-modern/page.tsx</code>. Each is a list of sections, so
+            you can reorder or delete lines, or move sections between layouts:
+          </p>
+          <pre><code>&lt;HeroSlider slides={heroSlides} /&gt;
+&lt;FeaturesBar /&gt;
+&lt;CategoryTiles slugs={["sofas", "chairs", "tables", "lighting"]} /&gt;
+&lt;ProductRail eyebrow="Most loved" title="Best sellers" items={bestSellers()} /&gt;
+&lt;DealSection /&gt;
+&lt;Testimonials /&gt;
+&lt;Newsletter /&gt;</code></pre>
+          <p>
+            Available sections: <code>HeroSlider</code>, <code>FeaturesBar</code>, <code>CategoryTiles</code>,
+            <code>ProductRail</code>, <code>ProductGrid</code>, <code>PromoPair</code>, <code>StorySplit</code>,
+            <code>DealSection</code>, <code>Testimonials</code>, <code>PressStrip</code>, <code>SocialGallery</code>,
+            <code>Newsletter</code>, <code>VideoBand</code>, <code>CollectionShowcase</code> and
+            <code>ShopTheRoom</code>. Their text lives in <code>data/home.ts</code>.
+          </p>
+          <p>
+            To make Editorial or Modern your main home page, copy its file over
+            <code>src/app/(site)/page.tsx</code> (and remove the original routes and their menu links if you don't need
+            them).
+          </p>
+          <p>
+            The deal countdown uses <code>deal.endsAt</code>. For a real deadline, set <code>repeatEveryDays: 0</code>;
+            otherwise the demo restarts the timer so it never shows as expired. The Home 3 video uses
+            <code>modern.video.src</code>; leave it empty to show the still image only.
+          </p>
+        </section>
+
+        <section id="menus">
+          <h2>Menus</h2>
+          <p>
+            <code>data/navigation.ts</code> holds the header menu and the footer columns. A header item with a
+            <code>mega</code> block opens a mega menu with link columns and an optional featured image; items without
+            one are plain links. The mobile menu is generated from the same data.
+          </p>
+        </section>
+
+        <section id="lookbook">
+          <h2>Lookbook hotspots</h2>
+          <p>
+            Each room in <code>data/collections.ts</code> has a photo and a list of hotspots. <code>x</code> and
+            <code>y</code> are percentages from the photo's top-left corner:
+          </p>
+          <pre><code>{ product: "dune-modular-sofa", x: 25, y: 68 },</code></pre>
+          <p>
+            Set <code>ratio</code> to your photo's real proportions (width / height, e.g. <code>"3 / 2"</code>) so
+            markers stay on the right object at every screen size. To find coordinates, open the photo in any image
+            editor, hover over the object, and divide its position by the image size.
+          </p>
+        </section>
+
+        <section id="blog">
+          <h2>Blog posts (MDX)</h2>
+          <ol>
+            <li>Create <code>content/blog/my-post.mdx</code> and write it in Markdown.</li>
+            <li>
+              Add an entry with <code>slug: "my-post"</code>, a title, excerpt, category, cover image key, author and
+              date in <code>data/blog.ts</code>.
+            </li>
+          </ol>
+          <p>Posts can use tables and three built-in components:</p>
+          <pre><code>&lt;Callout title="Measure twice"&gt;Check every doorway on the way in.&lt;/Callout&gt;
+&lt;ProductCallout slug="fjell-three-seat-sofa" /&gt;
+&lt;Figure image="room-cream" caption="Soft neutrals in a north-facing room" /&gt;</code></pre>
+          <p>
+            Add your own components, or change how headings, lists and quotes look, in
+            <code>src/mdx-components.tsx</code>.
+          </p>
+        </section>
+
+        <section id="other-content">
+          <h2>Other pages</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Page</th>
+                <th>Content file</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>About</td>
+                <td><code>data/about.ts</code>: story, numbers, values, process, team</td>
+              </tr>
+              <tr>
+                <td>FAQ</td>
+                <td><code>data/faq.ts</code>: grouped questions (also published as FAQ structured data)</td>
+              </tr>
+              <tr>
+                <td>Contact</td>
+                <td><code>data/stores.ts</code>: showrooms with OpenStreetMap maps (no API key)</td>
+              </tr>
+              <tr>
+                <td>Account</td>
+                <td><code>data/account.ts</code>: demo customer, sample orders, addresses</td>
+              </tr>
+              <tr>
+                <td>Coming Soon</td>
+                <td><code>comingSoon</code> in <code>data/site.ts</code>: title, text, launch date, image</td>
+              </tr>
+              <tr>
+                <td>Product tabs</td>
+                <td><code>shippingInfo</code> in <code>data/site.ts</code></td>
+              </tr>
+              <tr>
+                <td>Privacy, Terms, Cookies, Shipping &amp; returns</td>
+                <td>
+                  <code>data/legal.ts</code>. <code>{store}</code>, <code>{email}</code> and <code>{url}</code> are
+                  filled in from <code>data/site.ts</code>. The cookie page has a button that reopens the cookie banner.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="note warn">
+            <p>
+              The policy pages are starting templates written for a typical online furniture store, not legal advice.
+              Have them reviewed for your business and the countries you sell to before launch.
+            </p>
+          </div>
+          <p>
+            To get a map for your address: open <a href="https://www.openstreetmap.org">openstreetmap.org</a>, find the
+            location, choose <em>Share → HTML</em>, and copy the iframe's <code>src</code> into <code>map</code>.
+          </p>
+          <p>
+            The <code>/elements/</code> page shows every component and token; it's useful while rebranding. Remove it
+            (and its menu link) before launch if you like.
+          </p>
+        </section>
+
+        <section id="commerce">
+          <h2>Cart, promos &amp; sets</h2>
+          <ul>
+            <li>
+              <strong>Promo codes:</strong> <code>promoCodes</code> in <code>data/site.ts</code>, each with a
+              percentage. Codes are not case-sensitive.
+            </li>
+            <li>
+              <strong>"Complete the look" sets:</strong> <code>data/bundles.ts</code>. When every product in a set is in
+              the cart, the set's percentage comes off one of each, shown as its own line in the totals. Sets appear on
+              the page of every product they include.
+            </li>
+            <li><strong>Free delivery meter:</strong> <code>freeShippingThreshold</code>.</li>
+            <li>
+              <strong>Delivery estimate:</strong> parsed from each product's <code>leadTime</code> plus a transit time
+              by ZIP zone in <code>src/lib/delivery.ts</code>. Replace <code>transitDays</code> with your carrier's
+              rates.
+            </li>
+          </ul>
+          <p>
+            In the demo, the cart, wishlist, recently viewed items, orders and requests are stored in the visitor's
+            browser. Connect a platform (next section) for real orders.
+          </p>
+        </section>
+
+        <section id="popups">
+          <h2>Pop-up, cookies &amp; analytics</h2>
+          <h3>Newsletter pop-up</h3>
+          <p>
+            <code>newsletter.popup</code> in <code>data/site.ts</code>: <code>enabled</code>, <code>delaySeconds</code>,
+            <code>daysBetween</code> and the <code>offer</code> text. It waits until the cookie choice is made, never
+            opens over another dialog, and never shows on checkout or Coming Soon. On sign-up it reveals your first
+            promo code.
+          </p>
+          <h3>Cookie banner</h3>
+          <p>
+            <code>analytics.cookieBanner</code> turns it on or off. Visitors can accept all, reject optional cookies, or
+            choose analytics and marketing separately. The cart and wishlist are strictly necessary storage and work
+            either way.
+          </p>
+          <h3>Analytics events</h3>
+          <p>
+            The template sends standard e-commerce events in Google Analytics 4 format to <code>window.dataLayer</code>,
+            which Google Tag Manager reads:
+          </p>
+          <p>
+            <code>view_item</code> · <code>add_to_cart</code> · <code>remove_from_cart</code> ·
+            <code>add_to_wishlist</code> · <code>begin_checkout</code> · <code>purchase</code> · <code>search</code> ·
+            <code>sign_up</code> · <code>generate_lead</code>
+          </p>
+          <p>
+            To use them, paste your Google Tag Manager snippet into the <code>&lt;head&gt;</code> in
+            <code>src/app/layout.tsx</code> and add GA4 tags for these events. For any other tool, listen for the DOM
+            event:
+          </p>
+          <pre><code>window.addEventListener("nordhaus:track", (e) =&gt; {
+  console.log(e.detail.event, e.detail.ecommerce);
+});</code></pre>
+          <p>
+            Events wait for consent unless you set <code>analytics.requireConsent: false</code>. Set
+            <code>analytics.debug: true</code> to log every event in the browser console while you set things up.
+          </p>
+        </section>
+
+        <section id="backend">
+          <h2>Connect a backend</h2>
+          <p>
+            Every page reads products and categories through one module, <code>src/lib/catalog.ts</code>, and every
+            Checkout button goes through <code>src/lib/commerce.ts</code>. Two settings in
+            <code>data/site.ts</code> choose the source:
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th>Setting</th>
+                <th>Values</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>catalogSource</code></td>
+                <td>
+                  <code>"local"</code>: <code>data/products.ts</code>. <code>"shopify"</code>: products synced from your
+                  Shopify store.
+                </td>
+              </tr>
+              <tr>
+                <td><code>checkoutMode</code></td>
+                <td>
+                  <code>"demo"</code>: the built-in checkout page (no payment). <code>"shopify"</code>: sends the cart
+                  to Shopify's hosted checkout.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <h3>Shopify, step by step</h3>
+          <ol>
+            <li>
+              <strong>Try it with Shopify's public demo store first</strong> (no account needed):
+              <pre><code>SHOPIFY_STOREFRONT_URL=https://furniture.mock.shop/api npm run catalog:shopify</code></pre>
+            </li>
+            <li>
+              <strong>For your store:</strong> in Shopify admin, add the free <em>Headless</em> sales channel (or create
+              a custom app with Storefront API access), give it read access to products and collections and write access
+              to carts, and copy its public Storefront access token. Copy <code>.env.example</code> to
+              <code>.env.local</code> and fill in, using a
+              <a href="https://shopify.dev/docs/api/usage/versioning">currently supported API version</a> in the URL
+              (Shopify supports each version for about a year):
+              <pre><code>SHOPIFY_STOREFRONT_URL=https://your-store.myshopify.com/api/2026-07/graphql.json
+SHOPIFY_STOREFRONT_TOKEN=your-storefront-token
+NEXT_PUBLIC_SHOPIFY_STOREFRONT_URL=https://your-store.myshopify.com/api/2026-07/graphql.json
+NEXT_PUBLIC_SHOPIFY_STOREFRONT_TOKEN=your-storefront-token</code></pre>
+            </li>
+            <li>
+              Run <code>npm run catalog:shopify</code>. It writes <code>data/shopify/catalog.ts</code> and prints your
+              store's currency (set <code>currency</code> in <code>data/site.ts</code> to match).
+            </li>
+            <li>
+              Set <code>catalogSource: "shopify"</code> and <code>checkoutMode: "shopify"</code>, then
+              <code>npm run build</code>.
+            </li>
+            <li>
+              Re-run the sync and rebuild whenever products change. On Vercel or Netlify you can run both in the build
+              command, and trigger a rebuild from a Shopify webhook.
+            </li>
+          </ol>
+          <p>
+            The sync maps Shopify data onto the template: collections become categories; Color, Finish, Fabric and
+            Upholstery options become color swatches; other options (Size, Material…) become selectors with price
+            differences; stock, compare-at prices and variant IDs are kept for checkout. Storefront tokens are designed
+            to be public: they can read products and create carts, nothing else.
+          </p>
+          <div class="note">
+            <p>
+              Shopify has no standard dimensions or reviews fields, so synced products hide the dimensions tab and show
+              no reviews (the demo reviews are never attached to real products). To add dimensions, store them in
+              product metafields and extend the mapping in <code>scripts/sync-shopify.mjs</code>. Update
+              <code>data/collections.ts</code> hotspots, <code>data/bundles.ts</code> and the product slugs in
+              <code>data/home.ts</code> to use your own products; sections whose products don't exist hide themselves.
+            </p>
+          </div>
+          <h3>Other platforms</h3>
+          <p>
+            For Medusa, Saleor, BigCommerce, a headless CMS or your own API, write a script that outputs the same
+            <code>Product</code> and <code>Category</code> shapes (documented in <code>data/products.ts</code>), point
+            <code>src/lib/catalog.ts</code> at it, and add a branch to <code>startCheckout</code> in
+            <code>src/lib/commerce.ts</code> that returns your checkout URL (for example a Stripe Checkout session
+            created by your API).
+          </p>
+        </section>
+
+        <section id="forms">
+          <h2>Connect forms</h2>
+          <p>
+            The newsletter, contact, review, back-in-stock, swatch and account forms validate input and show a
+            confirmation, but don't send data anywhere by default. Each one has a comment marking where to add your
+            service: a form backend such as Formspree or Netlify Forms, your email platform's API, or your auth
+            provider.
+          </p>
+        </section>
+
+        <section id="seo">
+          <h2>SEO</h2>
+          <ul>
+            <li>
+              Every page has a title, description and canonical address. Product and blog pages share their own photo;
+              other pages use <code>public/og.png</code>.
+            </li>
+            <li>
+              <code>/sitemap.xml</code> lists every page, category, product (with images) and post.
+              <code>/robots.txt</code> points to it and keeps cart, checkout, account and wishlist pages out of search.
+            </li>
+            <li>
+              Structured data: <code>Product</code> (price, stock, rating, dimensions) and
+              <code>BreadcrumbList</code> on product pages, <code>BlogPosting</code> on posts, <code>FAQPage</code> on
+              the FAQ.
+            </li>
+            <li>
+              The shop's static HTML lists every product, so search engines see the full catalog without running
+              JavaScript.
+            </li>
+          </ul>
+          <p>
+            Set <code>site.url</code> before building, then submit <code>https://your-domain/sitemap.xml</code> in
+            Google Search Console.
+          </p>
+        </section>
+
+        <section id="deploy">
+          <h2>Deployment</h2>
+          <p>
+            <code>npm run build</code> produces a complete static site in <code>/out</code>. It runs a small post-build
+            step (<code>scripts/flatten-prefetch.mjs</code>) that fixes a Next.js 16 static-export issue where page
+            prefetches would return 404s on static hosts. Leave it in place.
+          </p>
+          <h3>Vercel</h3>
+          <ol>
+            <li>Push the project to GitHub, GitLab or Bitbucket.</li>
+            <li>
+              Import it at <a href="https://vercel.com/new">vercel.com/new</a>. Vercel detects Next.js; keep the
+              defaults.
+            </li>
+            <li>
+              For Shopify, add the environment variables from <code>.env.example</code> in
+              <em>Project Settings → Environment Variables</em>.
+            </li>
+          </ol>
+          <h3>Netlify</h3>
+          <ol>
+            <li>Import the repository at <a href="https://app.netlify.com/start">app.netlify.com/start</a>.</li>
+            <li>Build command: <code>npm run build</code>. Publish directory: <code>out</code>.</li>
+          </ol>
+          <h3>Any static host</h3>
+          <p>
+            Upload the contents of <code>/out</code> to any web server or object storage (Cloudflare Pages, GitHub
+            Pages, S3 with CloudFront, cPanel hosting…). Configure the host to serve <code>404.html</code> for unknown
+            addresses. URLs end in a slash (<code>/shop/</code>), which every host supports. To serve the site from a
+            subfolder, set <code>basePath</code> in <code>next.config.ts</code>.
+          </p>
+        </section>
+
+        <section id="quality">
+          <h2>Testing &amp; quality</h2>
+          <p>
+            The template ships with a Playwright end-to-end suite that tests the built site: shop filters and category
+            pages, product options and price changes, delivery estimates, swatches, sets, cart totals and promo codes,
+            checkout validation and order tracking, the header, persistence, the style switcher, consent and analytics,
+            the pop-up, mobile drawers, and every page in light and dark mode with and without reduced motion.
+          </p>
+          <pre><code>npx playwright install chromium   # once
+npm run build
+npm run test:e2e</code></pre>
+          <p>Already have Chrome? Skip the install and run <code>PW_CHANNEL=chrome npm run test:e2e</code>.</p>
+          <h3>Lighthouse</h3>
+          <p>Measured on the demo build (median of three runs):</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Desktop</th>
+                <th>Mobile (slow 4G)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Performance</td>
+                <td>98–100</td>
+                <td>80–90, depending on the page</td>
+              </tr>
+              <tr>
+                <td>Accessibility</td>
+                <td>100</td>
+                <td>100</td>
+              </tr>
+              <tr>
+                <td>Best Practices</td>
+                <td>100</td>
+                <td>100</td>
+              </tr>
+              <tr>
+                <td>SEO</td>
+                <td>100</td>
+                <td>100</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            Mobile scores depend mostly on your photos: export them as WebP or AVIF at about 2000px wide and host them
+            on your own domain or CDN. Lab scores also vary between machines and runs, so check your deployed store with
+            <a href="https://pagespeed.web.dev/">PageSpeed Insights</a>, which uses Google's consistent test hardware.
+          </p>
+        </section>
+
+        <section id="accessibility">
+          <h2>Accessibility</h2>
+          <ul>
+            <li>WCAG AA color contrast in every preset, light and dark.</li>
+            <li>
+              Keyboard support throughout: mega menu, drawers and dialogs (focus is trapped and restored, Escape
+              closes), tabs (arrow keys), sliders, carousels and swatches. Visible focus rings everywhere.
+            </li>
+            <li>A "Skip to content" link, landmarks and a logical heading order on every page.</li>
+            <li>Forms label every field, announce errors and move focus to the first one.</li>
+            <li>
+              Motion respects the operating system's reduced-motion setting: reveals, the hero, the marquee and the
+              background video stop. Autoplaying content has a pause button.
+            </li>
+          </ul>
+          <p>When you add content, write meaningful <code>alt</code> text for photos and keep headings in order.</p>
+        </section>
+
+        <section id="faq">
+          <h2>Troubleshooting</h2>
+          <h3>Photos don't load</h3>
+          <p>
+            The demo photos load from Unsplash, so they need an internet connection. Switch to your own photos or to
+            placeholder mode (<a href="#images">Images</a>).
+          </p>
+          <h3>How do I change the currency?</h3>
+          <p>
+            Set <code>currency</code> and <code>locale</code> in <code>data/site.ts</code>, then update prices and the
+            free-delivery threshold.
+          </p>
+          <h3>How do I remove the demo extras?</h3>
+          <p>
+            Set <code>demo.styleSwitcher: false</code>. Delete the home layouts and pages you don't need from
+            <code>src/app/(site)/</code> and remove their links in <code>data/navigation.ts</code>. Turn off the pop-up
+            with <code>newsletter.popup.enabled: false</code>.
+          </p>
+          <h3>A page I added shows a 404 after deploying</h3>
+          <p>
+            Static exports only include pages known at build time. Rebuild after adding products, categories or posts,
+            and make sure dynamic pages list their slugs in <code>generateStaticParams</code>.
+          </p>
+          <h3>The build fails after editing data</h3>
+          <p>
+            Run <code>npm run typecheck</code>. TypeScript names the file and field, for example a product whose
+            <code>category</code> doesn't exist or a misspelled image key.
+          </p>
+        </section>
+
+        <section id="credits">
+          <h2>Credits</h2>
+          <ul>
+            <li>
+              <strong>Photography (live demo only):</strong> <a href="https://unsplash.com">Unsplash</a>, under the
+              <a href="https://unsplash.com/license">Unsplash License</a>. Not included in the download. The full list
+              with source addresses is in <code>CREDITS.md</code>.
+            </li>
+            <li>
+              <strong>Video (live demo only):</strong> "Hands of a carpenter carving wood with a chisel",
+              <a href="https://mixkit.co">Mixkit</a>, Mixkit Free License.
+            </li>
+            <li>
+              <strong>Fonts:</strong> Fraunces, Manrope and IBM Plex Mono, via Google Fonts, SIL Open Font License 1.1.
+            </li>
+            <li><strong>Icons:</strong> <a href="https://lucide.dev">Lucide</a>, ISC License.</li>
+            <li>
+              <strong>Libraries:</strong> Next.js, React, Tailwind CSS, Framer Motion, next-themes, MDX, remark-gfm,
+              clsx, tailwind-merge (MIT); Playwright (Apache-2.0).
+            </li>
+          </ul>
+          <p>Product names, prices, people, reviews and addresses in the demo are fictional.</p>
+        </section>
+
+        <section id="changelog">
+          <h2>Changelog</h2>
+          <h3>1.0.0 — October 27, 2026</h3>
+          <p>
+            First release: three home layouts; shop with category pages and filters; product pages with zoom, variants,
+            dimensions, reviews, delivery estimates, back-in-stock alerts, fabric swatches and sets; cart, checkout,
+            wishlist and account with order tracking; lookbook, About, Journal (MDX), Contact, FAQ, 404 and Coming Soon;
+            three color presets with dark mode and layout options; catalog layer with Shopify sync and checkout; SEO,
+            structured data, analytics events with cookie consent; Playwright test suite.
+          </p>
+        </section>
+      </main>
+    </div>
+    <script>
+      // Copy buttons on code blocks
+      document.querySelectorAll("pre").forEach((pre) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.textContent = "Copy";
+        btn.addEventListener("click", async () => {
+          try {
+            await navigator.clipboard.writeText(pre.querySelector("code").innerText);
+            btn.textContent = "Copied";
+          } catch {
+            btn.textContent = "Select and copy";
+          }
+          setTimeout(() => (btn.textContent = "Copy"), 1600);
+        });
+        pre.appendChild(btn);
+      });
+
+      // Highlight the current section in the sidebar
+      const links = [...document.querySelectorAll(".sidebar nav a")];
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (!e.isIntersecting) return;
+            links.forEach((a) => a.setAttribute("aria-current", String(a.hash === "#" + e.target.id)));
+          });
+        },
+        { rootMargin: "-20% 0px -70% 0px" },
+      );
+      document.querySelectorAll("main section").forEach((s) => observer.observe(s));
+
+      // Mobile contents drawer
+      const sidebar = document.getElementById("sidebar");
+      const menuBtn = document.querySelector(".menu-btn");
+      menuBtn.addEventListener("click", () => {
+        const open = sidebar.classList.toggle("open");
+        menuBtn.setAttribute("aria-expanded", String(open));
+      });
+      links.forEach((a) =>
+        a.addEventListener("click", () => {
+          sidebar.classList.remove("open");
+          menuBtn.setAttribute("aria-expanded", "false");
+        }),
+      );
+
+      // Light / dark toggle (remembers the choice)
+      const root = document.documentElement;
+      const toggle = document.getElementById("theme-toggle");
+      const isDark = () =>
+        root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+      const label = () => (toggle.textContent = isDark() ? "Switch to light" : "Switch to dark");
+      try {
+        const saved = localStorage.getItem("nordhaus-docs-theme");
+        if (saved) root.dataset.theme = saved;
+      } catch {}
+      label();
+      toggle.addEventListener("click", () => {
+        root.dataset.theme = isDark() ? "light" : "dark";
+        try {
+          localStorage.setItem("nordhaus-docs-theme", root.dataset.theme);
+        } catch {}
+        label();
+      });
+    </script>
+  </body>
+</html>

@@ -39,3 +39,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Playwright
+/test-results/
+/playwright-report/
+
+# Mirrored demo photos (npm run demo:images) — live demo only, never shipped
+/public/demo-images/
+
+# Generated packages and listing images (npm run package / npm run marketplace)
+/dist/
